@@ -49,5 +49,12 @@
   
 
   ## [Email](fabiscg79@gmail.com)
+  ___________________________________________
+
+  ## ![NOTE TAKER](./public/assets/images/Note-Taker.png)
+
+  ## ![NOTE CREATOR](./public/assets/images/Note-Creator.png)
+
+  
 
   
