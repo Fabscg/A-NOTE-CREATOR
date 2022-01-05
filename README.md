@@ -49,6 +49,12 @@
   
 
   ## [Email](fabiscg79@gmail.com)
+
+  ## [Heroku](https://a-note-creator.herokuapp.com/notes)
+
+  ## [Github repo](git@github.com:Fabskickass/A-NOTE-CREATOR.git)
+
+  ## [Github URL](https://fabskickass.github.io/A-NOTE-CREATOR/)
   ___________________________________________
 
   ## ![NOTE TAKER](./public/assets/images/Note-Taker.png)
