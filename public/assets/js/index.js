@@ -1,9 +1,12 @@
+
+//create global variables
 let noteTitle;
 let noteText;
 let saveNoteBtn;
 let newNoteBtn;
 let noteList;
 
+//create an 'if' statement to see if the path of the url for the notes is equal to what it will show in the browser is the same path, then if this is true, will show all this classes from the right file
 if (window.location.pathname === '/notes') {
   noteTitle = document.querySelector('.note-title');
   noteText = document.querySelector('.note-textarea');
@@ -12,12 +15,12 @@ if (window.location.pathname === '/notes') {
   noteList = document.querySelectorAll('.list-container .list-group');
 }
 
-// Show an element
+// Show an element function
 const show = (elem) => {
   elem.style.display = 'inline';
 };
 
-// Hide an element
+// Hide an element function
 const hide = (elem) => {
   elem.style.display = 'none';
 };
@@ -25,6 +28,7 @@ const hide = (elem) => {
 // activeNote is used to keep track of the note in the textarea
 let activeNote = {};
 
+// creatinf a function by using 'fetch' will allowed you to request the API created for the notes with the 'GET'method
 const getNotes = () =>
   fetch('/api/notes', {
     method: 'GET',
@@ -32,17 +36,20 @@ const getNotes = () =>
       'Content-Type': 'application/json',
     },
   });
-
+//creating a function by using in the block fetch that will allowed us to save the note in the data
 const saveNote = (note) =>
   fetch('/api/notes', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
+    //using JSON.stringify will make the note readable
     body: JSON.stringify(note),
   });
 
+  //creating a 'deleteNote' function to be able to delete the notes
 const deleteNote = (id) =>
+//In order to delete those saved notes we need to add the 'id' number from that note 
   fetch(`/api/notes/${id}`, {
     method: 'DELETE',
     headers: {
@@ -52,7 +59,7 @@ const deleteNote = (id) =>
 
 const renderActiveNote = () => {
   hide(saveNoteBtn);
-
+//By using a 'readonly' sttribute we can make sure that the notes will be can't do any changes oe tap on the notes, until you tap the right delete button.
   if (activeNote.id) {
     noteTitle.setAttribute('readonly', true);
     noteText.setAttribute('readonly', true);
